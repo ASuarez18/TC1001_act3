@@ -17,7 +17,7 @@ from freegames import floor, vector
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
-aim = vector(5, 0)
+aim = vector(15, 0)
 pacman = vector(-40, -80)
 ghosts = [
     [vector(-180, 160), vector(15, 0)],
@@ -42,7 +42,7 @@ tiles = [
     0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0,
     0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0,
-    0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -125,7 +125,7 @@ def move():
 
     for point, course in ghosts:
         if valid(point + course):
-            point.move(course)
+            point.move(course) 
         else:
             options = [
                 vector(15, 0),
@@ -134,7 +134,7 @@ def move():
                 vector(0, -15),
             ]
             plan = choice(options)
-            course.x = plan.x
+            course.x = plan.x 
             course.y = plan.y
 
         up()
